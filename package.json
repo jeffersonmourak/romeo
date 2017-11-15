@@ -10,5 +10,10 @@
     "url": "jeffersonmourak.me"
   },
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "babel": "^6.23.0",
+    "react": "^16.1.1",
+    "webpack": "^3.8.1"
+  }
 }
