@@ -1,0 +1,14 @@
+{
+  "name": "romeo",
+  "version": "1.0.0",
+  "description": "Router for react",
+  "main": "index.js",
+  "repository": "https://github.com/jeffersonmourak/romeo",
+  "author": {
+    "name": "Jefferson Oliveira",
+    "email": "jeffersonmourak@gmail.com",
+    "url": "jeffersonmourak.me"
+  },
+  "license": "MIT",
+  "private": false
+}
