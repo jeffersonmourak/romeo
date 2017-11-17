@@ -9,8 +9,12 @@ class Cartography {
     return _.get(this.routes, routeName);
   }
 
+  getRouteKey(url) {
+    return _.findKey(this.routes, route => route.url === url);
+  }
+
   getURLRoute(url) {
-    let stateName = _.findKey(this.routes, route => route.url === url);
+    let stateName = this.getRouteKey(url);
 
     return this.getRoute(stateName);
   }

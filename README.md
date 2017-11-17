@@ -50,6 +50,18 @@ romeo.getCurrent();
 
 You can move the page for other state using `romeo.navigate('stateKey');`
 
+Other possible way to navigate is using the Link Component from romeo
+
+```javascript
+import { Link } from 'romeo';
+
+<View>
+...
+<Link href='/page'> Go to page </Link>
+...
+</View>
+```
+
 **Subscribe for routes changes**
  
 With this method, you can listen for URL changes into app with `romeo.subscribe(function)`

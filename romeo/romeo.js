@@ -4,6 +4,7 @@ import _ from 'lodash';
 import HistoryManager from './history-manager';
 import Cartography from './cartography';
 import DefaultComponent from './default-component.jsx';
+import LinkComponent from './link-component.jsx';
 
 class Romeo {
   constructor(cartography) {
@@ -24,18 +25,16 @@ class Romeo {
   reducer(state, action) {
     let current;
 
-    if (!state) {
-      return {
-        current: this.cartography.getURLRoute(this.historyManager.getCurrent())
-      };
-    }
-
     switch (action.type) {
       case 'ROMEO_NAV':
         current = this.cartography.getRoute(action.to); break;
       case 'ROMEO_NAV_URL':
         current = this.cartography.getURLRoute(action.to); break;
+      default:
+        current = this.cartography.getURLRoute(this.historyManager.getCurrent()); break;
     }
+
+    document.title = current.title;
 
     return Object.assign({}, state, { current });
   }
@@ -55,4 +54,9 @@ class Romeo {
   }
 }
 
-export {Cartography, DefaultComponent as RomeoWrapper,Romeo as default};
+export {
+  Cartography,
+  DefaultComponent as RomeoWrapper,
+  LinkComponent as Link,
+  Romeo as default
+};

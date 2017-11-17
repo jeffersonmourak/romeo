@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 
 class DefaultComponent extends React.Component {
   constructor(props) {
@@ -13,8 +14,10 @@ class DefaultComponent extends React.Component {
   }
 
   render() {
+    let current = this.romeo.getCurrent();
+    let content = _.get(current, 'content') || <h1> 404 </h1>
     return (<div>
-      { this.romeo.getCurrent().content }
+      { content }
       </div>);
   }
 }

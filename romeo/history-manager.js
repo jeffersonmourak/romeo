@@ -5,6 +5,8 @@ class HistoryManager {
 
     this.popStateCallbacks = [];
     window.onpopstate = this::this.onpopstate;
+
+    window.addEventListener('ROMEO_NAV', this::this.onpopstate);
   }
 
   getCurrent() {
